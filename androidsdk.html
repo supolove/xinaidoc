@@ -1,0 +1,1175 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Android聚合sdk接入文档 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="星魂Android聚合sdk接入说明，请接入人员认真仔细阅读文档，准确配置工程和接入sdk各个接口，保证功能完整和完善，不能有闪退或者异常出现。">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="android自测文档.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    星魂文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    客户端
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1.1" data-path="androidsdk.html">
+            
+                <a href="androidsdk.html">
+            
+                    
+                    Android聚合sdk接入文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="android自测文档.html">
+            
+                <a href="android自测文档.html">
+            
+                    
+                    android自测文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="iosdata.html">
+            
+                <a href="iosdata.html">
+            
+                    
+                    iOS统计SDK接入文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="iossdk.html">
+            
+                <a href="iossdk.html">
+            
+                    
+                    iOS SDK接入文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="下载.html">
+            
+                <a href="下载.html">
+            
+                    
+                    下载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    服务端
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="server-pay.html">
+            
+                <a href="server-pay.html">
+            
+                    
+                    支付异步通知文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="user-channel-verify.html">
+            
+                <a href="user-channel-verify.html">
+            
+                    
+                    角色登录校验文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="server_error_code.html">
+            
+                <a href="server_error_code.html">
+            
+                    
+                    服务端错误码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Android聚合sdk接入文档</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4E00;&#x3001;&#x6982;&#x8981;">&#x4E00;&#x3001;&#x6982;&#x8981;</h1>
+<h2 id="11-&#x76EE;&#x7684;">1.1 &#x76EE;&#x7684;</h2>
+<blockquote>
+<p>&#x672C;&#x6587;&#x6863;&#x4E3B;&#x8981;&#x9488;&#x5BF9;Android&#x7248;SDK&#x7684;&#x5404;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x5236;&#x5B9A;&#x51FA;&#x76F8;&#x5E94;&#x7684;&#x63A5;&#x53E3;&#x8BF4;&#x660E;&#x53CA;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x3002;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9605;&#x8BFB;&#x672C;&#x6587;&#x6863;&#x5E76;&#x7ED3;&#x5408;&#x6D4B;&#x8BD5;DEMO&#x63A5;&#x5165;SDK&#xFF0C;&#x672C;SDK&#x6240;&#x6709;&#x63A5;&#x53E3;&#x5747;&#x9700;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x3002;</p>
+<ul>
+<li><strong>&#x6E38;&#x620F;&#x65B9;&#x63D0;&#x4F9B;&#x7684;&#x6E38;&#x620F;&#x5305;&#x5FC5;&#x987B;&#x4E0D;&#x80FD;&#x6DF7;&#x6DC6;&#x548C;&#x52A0;&#x56FA;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x6253;&#x5305;&#x5931;&#x8D25;&#x3002;</strong></li>
+</ul>
+</blockquote>
+<h2 id="12-sdk&#x6D41;&#x7A0B;&#x56FE;">1.2 SDK&#x6D41;&#x7A0B;&#x56FE;</h2>
+<p>&#x7528;&#x6237;&#x767B;&#x5F55;&#x65F6;&#x5E8F;&#x56FE;
+<img src="androidsdk/user.png" alt="avatar"></p>
+<p>&#x7528;&#x6237;&#x5145;&#x503C;&#x65F6;&#x5E8F;&#x56FE;
+<img src="androidsdk/pay.png" alt="avatar"></p>
+<h1 id="&#x4E8C;&#x3001;&#x5BFC;&#x5165;&#x8D44;&#x6E90;">&#x4E8C;&#x3001;&#x5BFC;&#x5165;&#x8D44;&#x6E90;</h1>
+<blockquote>
+<p>&#x672C;SDK&#x76EE;&#x524D;&#x652F;&#x6301;Android2.3&#x53CA;&#x4EE5;&#x4E0A;&#x7684;&#x7CFB;&#x7EDF;&#x7248;&#x672C;&#xFF0C;&#x4E3A;&#x517C;&#x5BB9;Android 4.0&#x53CA;&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x624B;&#x673A;&#xFF0C;&#x7F16;&#x8BD1;&#x65F6;&#x8BF7;&#x4F7F;&#x7528;Android 4.2&#x6216;&#x4EE5;&#x4E0A;&#x7248;&#x672C;</p>
+<ul>
+<li><strong>&#x6CE8;&#xFF1A;&#x5BFC;&#x5165;demo&#x5DE5;&#x7A0B;&#x8BF7;&#x4EE5;utf-8&#x7F16;&#x7801;&#x3002;</strong></li>
+</ul>
+</blockquote>
+<h2 id="21-&#x5BFC;&#x5165;jar&#x5305;">2.1 &#x5BFC;&#x5165;jar&#x5305;</h2>
+<p>&#x5C06;&#x4E0B;&#x8F7D;&#x89E3;&#x538B;&#x51FA;&#x6765;&#xFF08;&#x8D44;&#x6E90;jar&#xFF09;&#x6587;&#x4EF6;&#x5939;&#x91CC;&#x9762;&#x7684;jar&#x5305;&#x62F7;&#x8D1D;&#x5230;libs&#x76EE;&#x5F55;&#x4E0B;&#x3002;</p>
+<h1 id="&#x4E09;&#x3001;&#x5E94;&#x7528;&#x5DE5;&#x7A0B;&#x7684;androidmanifestxml&#x914D;&#x7F6E;">&#x4E09;&#x3001;&#x5E94;&#x7528;&#x5DE5;&#x7A0B;&#x7684;AndroidManifest.xml&#x914D;&#x7F6E;</h1>
+<h2 id="31-target-sdk-version">3.1 target sdk version</h2>
+<blockquote>
+<p>&#x534E;&#x4E3A;&#x5C0F;&#x7C73;&#x7B49;&#x6E20;&#x9053;&#x5C06;&#x62D2;&#x7EDD;target SDK version&#x7B49;&#x7EA7;&#x4E0D;&#x5230;26&#x7684;&#x65B0;&#x5E94;&#x7528;&#x4E0A;&#x67B6;
+&#x8BF7;&#x68C0;&#x67E5;&#x8BE5;&#x7248;&#x672C;&gt;=26</p>
+</blockquote>
+<p>gradle&#x914D;&#x7F6E;&#xFF1A;</p>
+<pre><code class="lang-gradle">defaultConfig {
+    applicationId <span class="hljs-string">&quot;com.xxx&quot;</span>
+    minSdkVersion <span class="hljs-number">22</span>
+    targetSdkVersion <span class="hljs-number">26</span>
+    versionCode <span class="hljs-number">100</span>
+    versionName <span class="hljs-string">&quot;1.0&quot;</span>
+}
+</code></pre>
+<h2 id="32-application&#x914D;&#x7F6E;">3.2 Application&#x914D;&#x7F6E;</h2>
+<p>&#x5E94;&#x7528;&#x9700;&#x81EA;&#x884C;&#x5B9E;&#x73B0;Application&#x4E14;&#x5FC5;&#x987B;&#x7EE7;&#x627F;<code>com.lib.xh.sdk.XHApplication</code>&#x3002;
+&#x518D;&#x914D;&#x7F6E;&#x5230;AndroidManifest.xml&#x4E2D;&#xFF0C;&#x5982;:</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">application</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.xh.demo.MyApplication&quot;</span> &gt;</span>
+</code></pre>
+<h2 id="33-&#x7EC4;&#x4EF6;&#x914D;&#x7F6E;">3.3 &#x7EC4;&#x4EF6;&#x914D;&#x7F6E;</h2>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">activity</span>
+    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.lib.xh.ui.LoginActivity&quot;</span>
+    <span class="hljs-attr">android:configChanges</span>=<span class="hljs-string">&quot;fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode&quot;</span>
+    <span class="hljs-attr">android:windowSoftInputMode</span>=<span class="hljs-string">&quot;stateHidden|adjustResize|adjustPan&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">activity</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">activity</span>
+    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.lib.xh.ui.PayActivity&quot;</span>
+    <span class="hljs-attr">android:configChanges</span>=<span class="hljs-string">&quot;fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode&quot;</span>
+    <span class="hljs-attr">android:windowSoftInputMode</span>=<span class="hljs-string">&quot;stateHidden|adjustResize|adjustPan&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">activity</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">service</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.xh.update.DownloadService&quot;</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">provider</span>
+    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.support.v4.content.FileProvider&quot;</span>
+    <span class="hljs-attr">android:authorities</span>=<span class="hljs-string">&quot;${applicationId}.fileprovider&quot;</span>
+    <span class="hljs-attr">android:exported</span>=<span class="hljs-string">&quot;false&quot;</span>
+    <span class="hljs-attr">android:grantUriPermissions</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta-data</span>
+        <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.support.FILE_PROVIDER_PATHS&quot;</span>
+        <span class="hljs-attr">android:resource</span>=<span class="hljs-string">&quot;@xml/xh_file_paths&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">provider</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">service</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.xh.data.services.HeartBeatService&quot;</span>/&gt;</span>
+</code></pre>
+<h2 id="34-metadata&#x914D;&#x7F6E;">3.4 MetaData&#x914D;&#x7F6E;</h2>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta-data</span>
+    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;xinhun_appid&quot;</span>
+    <span class="hljs-attr">android:value</span>=<span class="hljs-string">&quot;1&quot;</span> &gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta-data</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">meta-data</span>
+    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;xinhun_data_id&quot;</span>
+    <span class="hljs-attr">android:value</span>=<span class="hljs-string">&quot;xaigame&quot;</span> &gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta-data</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">meta-data</span>
+    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;xinhun_appkey&quot;</span>
+    <span class="hljs-attr">android:value</span>=<span class="hljs-string">&quot;qqq&quot;</span> &gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta-data</span>&gt;</span>
+</code></pre>
+<p>&#x5E76;&#x628A;&#x7533;&#x8BF7;&#x5230;&#x7684;<code>appId</code>,<code>xinhun_appkey</code>&#x53CA;<code>xinhun_data_id</code> &#x66FF;&#x6362;  </p>
+<ul>
+<li>&#x5173;&#x4E8E;value&#x503C;&#x914D;&#x7F6E;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x5546;&#x52A1;&#x4EBA;&#x5458;&#xFF0C;&#x6E38;&#x620F;&#x4E0D;&#x80FD;&#x81EA;&#x7531;&#x4FEE;&#x6539;&#xFF0C;&#x8FD9;&#x91CC;&#x914D;&#x7F6E;&#x7684;&#x503C;&#x9700;&#x8981;&#x5BF9;&#x5E94;&#x5E94;&#x7528;&#x521D;&#x59CB;&#x5316;&#x7684;&#x5F00;&#x53D1;&#x73AF;&#x5883;</li>
+</ul>
+<h2 id="35-&#x6743;&#x9650;&#x914D;&#x7F6E;">3.5 &#x6743;&#x9650;&#x914D;&#x7F6E;</h2>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.ACCESS_NETWORK_STATE&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.READ_PHONE_STATE&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.ACCESS_WIFI_STATE&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.REQUEST_INSTALL_PACKAGES&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.SYSTEM_ALERT_WINDOW&quot;</span> /&gt;</span>
+</code></pre>
+<h1 id="&#x56DB;&#x3001;sdk&#x65B9;&#x6CD5;&#x8C03;&#x7528;">&#x56DB;&#x3001;SDK&#x65B9;&#x6CD5;&#x8C03;&#x7528;</h1>
+<h2 id="41-application&#x5B9E;&#x73B0;">4.1 Application&#x5B9E;&#x73B0;</h2>
+<p>&#x5E94;&#x7528;&#x65B9;&#x9700;&#x81EA;&#x884C;&#x5B9E;&#x73B0;Application&#xFF0C;&#x9700;&#x7EE7;&#x627F;<code>com.lib.xh.sdk.XHApplication</code>
+&#x5E76;&#x914D;&#x7F6E;&#x5230;<code>AndroidManifest.xml</code>&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyApplication</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">XHApplication</span> </span>{
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">super</span>.onCreate();
+        <span class="hljs-comment">//TODO &#x5B9E;&#x73B0;&#x60A8;&#x7684;&#x903B;&#x8F91;</span>
+    }
+}
+</code></pre>
+<h2 id="42-&#x95EA;&#x5C4F;&#x52A8;&#x753B;">4.2 &#x95EA;&#x5C4F;&#x52A8;&#x753B;</h2>
+<p>&#x5E94;&#x7528;&#x65B9;&#x5165;&#x53E3;Activity&#x9700;&#x7EE7;&#x627F;<code>com.lib.xh.sdk.XHSplashActivity</code>&#x3002;
+&#x6CE8;&#x610F;&#xFF1A;&#x6E38;&#x620F;&#x4E2D;&#x76F8;&#x5173;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#xFF1A;&#x6E38;&#x620F;&#x521D;&#x59CB;&#x5316;&#x7B49;&#xFF0C;&#x8BF7;&#x52FF;&#x5728;&#x672C;activity&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;&#x56E0;&#x4E3A;&#x6709;&#x4E9B;&#x6E20;&#x9053;&#x662F;&#x6CA1;&#x6709;&#x95EA;&#x5C4F;&#x9875;&#x7684;</p>
+<p><strong>&#x95EA;&#x5C4F;Activity&#x548C;&#x6E38;&#x620F;Activity&#x5728;&#x6E05;&#x5355;&#x4E2D;&#x5FC5;&#x987B;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;&#xFF0C;&#x5426;&#x5219;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x5BA1;&#x6838;</strong></p>
+<p>&#x95EA;&#x5C4F;Activity&#x6DFB;&#x52A0;<code>splash_activity</code>&#x5C5E;&#x6027;  </p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">activity</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta-data</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;splash_activity&quot;</span> <span class="hljs-attr">android:value</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">activity</span>&gt;</span>
+</code></pre>
+<p>&#x6E38;&#x620F;Activity&#x6DFB;&#x52A0;<code>game_activity</code>&#x5C5E;&#x6027;  </p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">activity</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta-data</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;game_activity&quot;</span> <span class="hljs-attr">android:value</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">activity</span>&gt;</span>
+</code></pre>
+<p>&#x95EA;&#x5C4F;&#x4EE3;&#x7801;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SplashActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">XHSplashActivity</span> </span>{
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSplashBefore</span><span class="hljs-params">(Context context, Bundle savedInstanceState)</span> </span>{
+        <span class="hljs-comment">// TODO &#x95EA;&#x5C4F;&#x52A8;&#x753B;&#x64AD;&#x653E;&#x524D;</span>
+    }
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSplashFinish</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO &#x95EA;&#x5C4F;&#x52A8;&#x753B;&#x64AD;&#x653E;&#x5B8C;&#x6BD5;</span>
+        startActivity(<span class="hljs-keyword">new</span> Intent(SplashActivity.<span class="hljs-keyword">this</span>,GameActivity.class));
+        finish();
+    }
+}
+</code></pre>
+<h2 id="43-&#x521D;&#x59CB;&#x5316;&#x63A5;&#x53E3;">4.3 &#x521D;&#x59CB;&#x5316;&#x63A5;&#x53E3;</h2>
+<h2 id="431-&#x5E94;&#x7528;&#x521D;&#x59CB;&#x5316;">4.3.1 &#x5E94;&#x7528;&#x521D;&#x59CB;&#x5316;</h2>
+<p>&#x8BF7;&#x5728;Application.onCreate&#x4E2D;&#x8C03;&#x7528;&#x4EE5;&#x4E0B;&#x521D;&#x59CB;&#x5316;&#x5E94;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li><strong>&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x4E0E;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x6709;&#x4E0D;&#x540C;&#x7684;<code>appId</code>&#x4E0E;<code>appKey</code>&#xFF0C;&#x5207;&#x6362;&#x73AF;&#x5883;&#x65F6;&#x8BF7;&#x6CE8;&#x610F;&#x68C0;&#x67E5;<code>AndroidManifest.xml</code>&#x7684;<code>appId</code>&#x4E0E;<code>appKey</code>&#x662F;&#x5426;&#x4E3A;&#x5BF9;&#x5E94;&#x7684;&#x503C;</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isLandscape</td>
+<td>boolean</td>
+<td>&#x6E38;&#x620F;&#x5C4F;&#x5E55;&#x65B9;&#x5411; &#x6A2A;&#x5C4F;&#xFF1A;true &#x7AD6;&#x5C4F;&#xFF1A;false</td>
+</tr>
+<tr>
+<td>isDebug</td>
+<td>boolean</td>
+<td>&#x6D4B;&#x8BD5;&#x4E8E;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x5207;&#x6362; <br>(<code>&#x6CE8;&#x610F;&#x63A5;&#x5165;&#x5BF9;&#x5E94;&#x670D;&#x52A1;&#x7AEF;</code>) <br>&#x6D4B;&#x8BD5;&#xFF1A;true &#x751F;&#x4EA7;&#xFF1A;false <br>&#x6E38;&#x620F;&#x4E0A;&#x7EBF;&#x65F6;&#x5FC5;&#x987B;&#x4FEE;&#x6539;&#x4E3A;&#xFF1A;<code>false</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-java">XHConfig config = <span class="hljs-keyword">new</span> XHConfig();
+config.setLandscape(<span class="hljs-keyword">true</span>);<span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x65B9;&#x5411; &#x6A2A;&#x5C4F; true &#x7AD6;&#x5C4F;false</span>
+config.setDebug(<span class="hljs-keyword">true</span>);<span class="hljs-comment">//&#x8BBE;&#x7F6E;debug&#x6A21;&#x5F0F;,&#x5BF9;&#x5E94;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#xFF0C;&#x6B63;&#x5F0F;&#x6253;&#x5305;&#x65F6;&#xFF0C;&#x8BF7;&#x4FEE;&#x6539;&#x4E3A;false</span>
+XHSDK.getInstance().initApplication(<span class="hljs-keyword">this</span>,config);
+</code></pre>
+<h2 id="432-game&#x521D;&#x59CB;&#x5316;">4.3.2 Game&#x521D;&#x59CB;&#x5316;</h2>
+<p>&#x8BF7;&#x5728;&#x6E38;&#x620F;Activity,&#x5982;:GameActivity&#x4E2D;&#x8C03;&#x7528;&#x4E00;&#x4E0B;&#x6E38;&#x620F;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x4FDD;&#x8BC1;&#x6E38;&#x620F;&#x8FD0;&#x884C;&#x671F;&#x95F4; &#x8BE5;Activity&#x4E0D;&#x88AB;&#x9500;&#x6BC1;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x5F15;&#x8D77;crash&#x3002;
+&#x6E20;&#x9053;&#x64CD;&#x4F5C;&#x62C9;&#x8D77;&#x6E38;&#x620F;&#x7684;&#x60C5;&#x666F;&#x4E0B;&#xFF0C;&#x6709;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x6E38;&#x620F;Activity&#x88AB;&#x62C9;&#x8D77;&#x4E24;&#x4E2A;&#x7684;&#x60C5;&#x51B5;,
+&#x6240;&#x4EE5;&#x5728;&#x6E38;&#x620F;Activity&#x7684;onCreate&#x91CC;&#x9762;&#x9700;&#x8981;&#x68C0;&#x6D4B;&#x5F53;&#x524D;Activity&#x662F;&#x5426;&#x662F;&#x91CD;&#x590D;&#x7684;&#x6E38;&#x620F;Activity&#xFF0C;&#x5982;&#x91CD;&#x590D;&#x8BF7;&#x53BB;&#x9664;&#x3002;
+&#x6CE8;&#x610F;&#xFF1A;&#x8BE5;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x8981;&#x5148;&#x4E8E;sdk.onCreate()&#x65B9;&#x6CD5;&#x6267;&#x884C;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">initGameActivity</span><span class="hljs-params">(Activity activity,String versionPack)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>activity</td>
+<td>Activity</td>
+<td>&#x6E38;&#x620F;Activity</td>
+</tr>
+<tr>
+<td>versionPack</td>
+<td>String</td>
+<td>&#x6E38;&#x620F;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7248;&#x53F7;&#xFF0C;&#x8BF7;&#x6B63;&#x786E;&#x4F20;&#x5165;&#x6E38;&#x620F;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x4EE5;&#x4FBF;&#x6570;&#x636E;&#x7EDF;&#x8BA1;&#x6B63;&#x786E;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="433-&#x7EDF;&#x4E00;&#x7684;&#x56DE;&#x8C03;&#x63A5;&#x53E3;">4.3.3 &#x7EDF;&#x4E00;&#x7684;&#x56DE;&#x8C03;&#x63A5;&#x53E3;</h2>
+<p>&#x8BF7;&#x5728;&#x6E38;&#x620F;&#x7684;Activity&#x7684;onCreate&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;&#x8BE5;&#x4EE3;&#x7801;&#x521D;&#x59CB;&#x5316;&#x76D1;&#x542C;&#x5668;<br>&#x8BE5;&#x76D1;&#x542C;&#x5668;&#x5305;&#x62EC;&#x6240;&#x6709;sdk&#x7684;&#x56DE;&#x8C03;&#xFF0C;&#x63A5;&#x5165;&#x4EBA;&#x5458;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x56DE;&#x8C03;&#x5904;&#x7406;&#x597D;&#x6E38;&#x620F;&#x7684;&#x903B;&#x8F91;<br>&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#x5305;&#x62EC;  </p>
+<ol>
+<li>&#x521D;&#x59CB;&#x5316;&#x56DE;&#x8C03;</li>
+<li>&#x767B;&#x5F55;&#x56DE;&#x8C03;</li>
+<li>&#x767B;&#x51FA;&#x56DE;&#x8C03;</li>
+<li>&#x5207;&#x6362;&#x8D26;&#x53F7;&#x56DE;&#x8C03;</li>
+<li>&#x5145;&#x503C;&#x56DE;&#x8C03;  </li>
+<li>&#x9000;&#x51FA;&#x7A0B;&#x5E8F;&#x56DE;&#x8C03;</li>
+</ol>
+<p>&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java">sdk.setStateCallBack(initStateCallback());
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> XHStateCallBack <span class="hljs-title">initStateCallback</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> XHStateCallBack() {
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onInitSuccess</span><span class="hljs-params">()</span> </span>{
+            Log.d(TAG, <span class="hljs-string">&quot;onInitSuccess: &quot;</span>);
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onInitFail</span><span class="hljs-params">(XHErrorInfo xhErrorInfo)</span> </span>{
+            Log.d(TAG, <span class="hljs-string">&quot;onInitFail: &quot;</span>);
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onLoginSuccess</span><span class="hljs-params">(XHGotUserInfo userInfo)</span> </span>{
+            Log.d(TAG, <span class="hljs-string">&quot;onLoginSuccess: &quot;</span>);
+            <span class="hljs-comment">//&#x8FDB;&#x5165;&#x6E38;&#x620F;</span>
+            toGameContent();
+            <span class="hljs-comment">// sdk&#x8FD4;&#x56DE;&#x7684;&#x7528;&#x6237;ID &#x652F;&#x4ED8;&#x65F6;&#x9700;&#x4F20;&#x5165;</span>
+            userId = userInfo.getUid() + <span class="hljs-string">&quot;&quot;</span>;
+<span class="hljs-comment">//            // &#x6821;&#x9A8C;&#x7528;&#x6237;&#x6709;&#x6548;&#x6027;&#x9700;&#x4F7F;&#x7528;</span>
+            String secretKey = userInfo.getSecretKey();
+<span class="hljs-comment">//            toast(&quot;&#x767B;&#x5F55;&#x6210;&#x529F;\n&quot; + accessToken);</span>
+            textView.setText(<span class="hljs-string">&quot;&#x6E38;&#x620F;&#x9875;&#x9762;\nuserId:&quot;</span> + userId);
+            <span class="hljs-comment">//&#x63D0;&#x4EA4;&#x6E38;&#x620F;&#x7528;&#x6237;&#x4FE1;&#x606F;</span>
+            subUserInfo();
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onLoginFail</span><span class="hljs-params">(XHErrorInfo xhErrorInfo)</span> </span>{
+            Log.d(TAG, <span class="hljs-string">&quot;onLoginFail: &quot;</span> + xhErrorInfo.getErrorMsg());
+            <span class="hljs-keyword">switch</span> (xhErrorInfo.getErrorCode()) {
+                <span class="hljs-keyword">case</span> XHError.CODE_LOGIN_CANCEL:
+                    <span class="hljs-comment">// &#x767B;&#x9646;&#x53D6;&#x6D88;</span>
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> XHError.CODE_LOGIN_LOADING:
+                    <span class="hljs-comment">// &#x6B63;&#x5728;&#x767B;&#x9646;</span>
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> XHError.CODE_USER_INVALID:
+                    <span class="hljs-comment">//&#x767B;&#x9646;&#x5931;&#x8D25;XHError.CODE_USER_INVALID&#x8FD4;&#x56DE;,&#x8BF7;&#x5382;&#x5546;&#x5728;&#x6536;&#x5230;&#x6B64;&#x8FD4;&#x56DE;&#x65F6;&#x628A;&#x6E38;&#x620F;&#x9000;&#x51FA;&#x5230;&#x9996;&#x9875;&#xFF0C;&#x5426;&#x5219;&#x6D4B;&#x8BD5;&#x4E0D;&#x4F1A;&#x901A;&#x8FC7;&#xFF0C;&#x8C22;&#x8C22;&#x5408;&#x4F5C;&#xFF01;</span>
+                    returnGameLogin();
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">default</span>:
+                    <span class="hljs-comment">// &#x5176;&#x4ED6;&#x5F02;&#x5E38;</span>
+                    <span class="hljs-keyword">break</span>;
+            }
+            toast(xhErrorInfo.getErrorMsg());
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onLogoutSuccess</span><span class="hljs-params">()</span> </span>{
+            Log.d(TAG, <span class="hljs-string">&quot;onLogoutSuccess: &quot;</span>);
+            returnGameLogin();
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onLogoutFail</span><span class="hljs-params">(String errorMessage)</span> </span>{
+            Log.d(TAG, <span class="hljs-string">&quot;onLogoutFail: &quot;</span> + errorMessage);
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPaySuccess</span><span class="hljs-params">(String orderId)</span> </span>{
+            <span class="hljs-comment">// &#x6B64;&#x65F6;CP&#x53EF;&#x8BB0;&#x5F55;&#x8BA2;&#x5355;&#x7F16;&#x53F7;&#xFF0C;&#x63D0;&#x4EA4;&#x7ED9;&#x540E;&#x53F0;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7B49;&#x5F85;&#x5230;&#x8D26;&#x901A;&#x77E5;&#xFF0C;&#x5982;&#x679C;&#x5230;&#x8D26;&#x5373;&#x53EF;&#x53D1;&#x8D27;</span>
+            toast(<span class="hljs-string">&quot;&#x5DF2;&#x53D1;&#x8D77;&#x652F;&#x4ED8;&#xFF0C;&#x8BF7;&#x67E5;&#x8BE2;&#x670D;&#x52A1;&#x5668;&#x662F;&#x5426;&#x5230;&#x8D26;&quot;</span> + orderId);
+            Log.d(TAG, <span class="hljs-string">&quot;onPaySuccess: &quot;</span>);
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPayFail</span><span class="hljs-params">(XHErrorInfo xhErrorInfo)</span> </span>{
+            Log.d(TAG, <span class="hljs-string">&quot;onPayFail: &quot;</span> );
+            <span class="hljs-keyword">switch</span> (xhErrorInfo.getErrorCode()) {
+                <span class="hljs-keyword">case</span> XHError.CODE_WITHOUT_LOGIN:
+                    <span class="hljs-comment">// &#x5C1A;&#x672A;&#x767B;&#x9646;</span>
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> XHError.CODE_NEED_LOGIN_AGAIN:
+                    <span class="hljs-comment">// &#x9700;&#x8981;&#x91CD;&#x65B0;&#x767B;&#x9646;</span>
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> XHError.CODE_PAY_CANCEL:
+                    <span class="hljs-comment">// &#x652F;&#x4ED8;&#x53D6;&#x6D88;</span>
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> XHError.CODE_IN_PAYMENT:
+                    <span class="hljs-comment">// &#x6B63;&#x5728;&#x4ED8;&#x6B3E;</span>
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">default</span>:
+                    <span class="hljs-comment">// &#x5176;&#x4ED6;&#x5F02;&#x5E38;</span>
+                    <span class="hljs-keyword">break</span>;
+            }
+            toast(xhErrorInfo.getErrorMsg());
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onQuit</span><span class="hljs-params">()</span> </span>{
+            Log.d(TAG, <span class="hljs-string">&quot;onQuit: &quot;</span>);
+            <span class="hljs-comment">// &#x56DE;&#x6536;sdk&#x8D44;&#x6E90;</span>
+            sdk.destroySDK(GameActivity.<span class="hljs-keyword">this</span>);
+            GameActivity.<span class="hljs-keyword">this</span>.finish();
+            System.exit(<span class="hljs-number">0</span>);
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSwitchAccountSuccess</span><span class="hljs-params">(XHGotUserInfo userInfo)</span> </span>{
+            Log.d(TAG, <span class="hljs-string">&quot;onSwitchAccountSuccess: &quot;</span>);
+            <span class="hljs-comment">// &#x5207;&#x6362;&#x767B;&#x5F55;&#x6210;&#x529F;</span>
+            <span class="hljs-comment">// &#x8FDB;&#x5165;&#x6E38;&#x620F;</span>
+            toGameContent();
+            userId = userInfo.getUid() + <span class="hljs-string">&quot;&quot;</span>;
+            userName = userInfo.getUsername();
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSwitchAccountFail</span><span class="hljs-params">(String erroe)</span> </span>{
+            Log.d(TAG, <span class="hljs-string">&quot;onSwitchAccountFail: &quot;</span>);
+            <span class="hljs-comment">// &#x8BF7;&#x5382;&#x5546;&#x5728;&#x6536;&#x5230;&#x6B64;&#x8FD4;&#x56DE;&#x65F6;&#x628A;&#x6E38;&#x620F;&#x9000;&#x51FA;&#x5230;&#x9996;&#x9875;&#xFF0C;&#x5426;&#x5219;&#x6D4B;&#x8BD5;&#x4E0D;&#x4F1A;&#x901A;&#x8FC7;&#xFF0C;&#x8C22;&#x8C22;&#x5408;&#x4F5C;&#xFF01;</span>
+            <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x767B;&#x5F55;&#x754C;&#x9762;</span>
+            returnGameLogin();
+        }
+    };
+}
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;</strong></p>
+<ol>
+<li>onSwitchAccountSuccess&#x8FD4;&#x56DE;&#x767B;&#x5F55;&#x6210;&#x529F;&#x7684;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x6E38;&#x620F;&#x5207;&#x6362;&#x8D26;&#x53F7;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8BE5;&#x8FD4;&#x56DE;&#x7684;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x8FDB;&#x5165;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5426;&#x5219;&#x5207;&#x6362;&#x8D26;&#x53F7;&#x4E0D;&#x6210;&#x529F;&#xFF0C;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;&#x5BA1;&#x6838;&#x3002;</li>
+<li>&#x5728;&#x63A5;&#x6536;&#x5230;onFail&#x65B9;&#x6CD5;&#x8BF7;&#x9000;&#x51FA;&#x5F53;&#x524D;&#x6E38;&#x620F;&#x7528;&#x6237;&#xFF0C;&#x4F8B;&#x5982;&#x56DE;&#x5230;&#x767B;&#x5F55;&#x754C;&#x9762;&#x91CD;&#x65B0;&#x767B;&#x5F55;</li>
+</ol>
+<h2 id="44-&#x767B;&#x9646;&#x6CE8;&#x518C;&#x63A5;&#x53E3;">4.4 &#x767B;&#x9646;/&#x6CE8;&#x518C;&#x63A5;&#x53E3;</h2>
+<h2 id="441-&#x63A5;&#x53E3;&#x4E00;">4.4.1 &#x63A5;&#x53E3;&#x4E00;</h2>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">login</span><span class="hljs-params">(Context context)</span></span>;
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x5B9E;&#x73B0;<code>XHCallBack&lt;XHGotUserInfo&gt;</code>&#x63A5;&#x53E3;&#x83B7;&#x53D6;&#x767B;&#x9646;&#x7ED3;&#x679C;&#x901A;&#x77E5;&#xFF0C;&#x767B;&#x9646;&#x6210;&#x529F;&#x5C06;&#x56DE;&#x8C03;onSuccess&#x53EF;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x767B;&#x9646;&#x5F02;&#x5E38;&#x5C06;&#x56DE;&#x8C03;&#x76F8;&#x5E94;&#x7684;&#x72B6;&#x6001;&#x5417;&#x548C;&#x72B6;&#x6001;&#x6D88;&#x606F;&#x3002;
+<strong>(&#x767B;&#x9646;&#x5931;&#x8D25;<code>XHError.CODE_USER_INVALID</code>&#x8FD4;&#x56DE;,&#x8BF7;&#x5382;&#x5546;&#x5728;&#x6536;&#x5230;&#x6B64;&#x8FD4;&#x56DE;&#x65F6;&#x628A;&#x6E38;&#x620F;&#x9000;&#x51FA;&#x5230;&#x767B;&#x5F55;&#x573A;&#x666F;&#xFF0C;&#x5426;&#x5219;&#x6D4B;&#x8BD5;&#x4E0D;&#x4F1A;&#x901A;&#x8FC7;&#xFF0C;&#x8C22;&#x8C22;&#x5408;&#x4F5C;&#xFF01;)</strong>
+&#x767B;&#x9646;&#x6210;&#x529F;&#x540E;&#x9700;&#x9A8C;&#x8BC1;&#x7528;&#x6237;&#x6709;&#x6548;&#x6027;&#xFF0C;&#x5382;&#x5546;&#x9700;&#x63A5;&#x5165;&#x9A8C;&#x8BC1;&#x63A5;&#x53E3;&#xFF0C;&#x8BE6;&#x89C1;&#xFF1A;SDK&#x670D;&#x52A1;&#x5668;&#x63A5;&#x53E3;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Msg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XHError.CODE_LOGIN_CANCEL</td>
+<td>&#x7528;&#x6237;&#x53D6;&#x6D88;&#x767B;&#x9646;&#x64CD;&#x4F5C;</td>
+</tr>
+<tr>
+<td>XHError.CODE_LOGIN_LOADING</td>
+<td>&#x7528;&#x6237;&#x6B63;&#x5728;&#x767B;&#x9646;</td>
+</tr>
+<tr>
+<td>XHError.CODE_USER_INVALID</td>
+<td>&#x7528;&#x6237;&#x5931;&#x6548;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x53EF;&#x53C2;&#x8003;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;SDK&#x7684;&#x6CE8;&#x518C;/&#x767B;&#x9646;&#x8C03;&#x7528;&#x5904;&#x7406;:</p>
+<pre><code class="lang-java">sdk.login(GameActivity.<span class="hljs-keyword">this</span>);
+</code></pre>
+<p>&#x9700;&#x8981;&#x6D4B;&#x8BD5;&#x767B;&#x9646;&#x529F;&#x80FD;&#x8BF7;&#x4F7F;&#x7528;&#x4E0B;&#x5217;&#x6D4B;&#x8BD5;&#x8D26;&#x53F7;&#xFF1A;<br>&#x6D4B;&#x8BD5;&#x670D;&#x6D4B;&#x8BD5;&#x8D26;&#x53F7;&#xFF1A;(&#x8D26;&#x53F7;&#x5BC6;&#x7801;&#x4E0D;&#x80FD;&#x4FEE;&#x6539;)<br>&#x8D26;&#x53F7;:1147484663 &#x5BC6;&#x7801;:1147484663<br>&#x8D26;&#x53F7;:1147484662 &#x5BC6;&#x7801;:1147484662  </p>
+<h2 id="442-&#x63A5;&#x53E3;&#x4E8C;">4.4.2 &#x63A5;&#x53E3;&#x4E8C;</h2>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">login2</span><span class="hljs-params">(Context context, XHPlatform platform)</span></span>;
+</code></pre>
+<p>&#x672C;&#x63A5;&#x53E3;&#x517C;&#x7528;&#x5355;&#x6E20;&#x9053;&#x591A;&#x8D26;&#x6237;&#x7CFB;&#x7EDF;&#x767B;&#x9646;&#xFF0C;&#x5982;&#x5E94;&#x7528;&#x5B9D;&#xFF1A;&#x652F;&#x6301;QQ&#x6216;&#x5FAE;&#x4FE1;&#x767B;&#x9646;&#xFF0C;&#x5176;&#x4F59;&#x903B;&#x8F91;&#x5747;&#x4E0E;&#x63A5;&#x53E3;&#x4E00;&#x76F8;&#x540C;&#x3002;
+&#x4E3A;&#x4E86;&#x4F7F;&#x6E38;&#x620F;&#x81EA;&#x5B9A;&#x4E49;&#x5FAE;&#x4FE1;&#xFF0C;qq&#x767B;&#x5F55;&#x6309;&#x94AE;&#x5E03;&#x5C40;&#xFF0C;&#x4F7F;&#x66F4;&#x517C;&#x5BB9;&#x6E38;&#x620F;&#x573A;&#x666F;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x533A;&#x5206;qq&#x3001;&#x5FAE;&#x4FE1;&#x767B;&#x5F55;&#x5165;&#x53E3;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XHPlatform.QQ</td>
+<td>QQ&#x767B;&#x9646;</td>
+</tr>
+<tr>
+<td>XHPlatform.WX</td>
+<td>&#x5FAE;&#x4FE1;&#x767B;&#x9646;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="45-&#x652F;&#x4ED8;&#x63A5;&#x53E3;">4.5 &#x652F;&#x4ED8;&#x63A5;&#x53E3;</h2>
+<h2 id="451-&#x652F;&#x4ED8;&#x4FE1;&#x606F;&#x521D;&#x59CB;&#x5316;">4.5.1 &#x652F;&#x4ED8;&#x4FE1;&#x606F;&#x521D;&#x59CB;&#x5316;</h2>
+<ul>
+<li>&#x4EE5;&#x4E0B;&#x53C2;&#x6570;&#x9664;&#x6807;&#x5FD7;&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x5916;&#xFF0C;&#x5168;&#x4E3A;&#x5FC5;&#x8981;&#x53C2;&#x6570;&#x3002;</li>
+<li>&#x91D1;&#x989D;&#x5355;&#x4F4D;&#xFF1A;rmb(&#x5143;)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th style="text-align:center">&#x7C7B;&#x578B;</th>
+<th style="text-align:center">&#x662F;&#x5426;&#x5FC5;&#x8981;&#x53C2;&#x6570;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>roleId</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">&#x662F;</td>
+<td>&#x5F53;&#x524D;&#x767B;&#x9646;&#x7684;&#x89D2;&#x8272;id</td>
+</tr>
+<tr>
+<td>roleName</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">&#x662F;</td>
+<td>&#x7528;&#x6237;&#x6635;&#x79F0;</td>
+</tr>
+<tr>
+<td>userId</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">&#x662F;</td>
+<td>&#x7528;&#x6237;id&#xFF0C;(&#x767B;&#x9646;&#x63A5;&#x53E3;&#x8FD4;&#x56DE;)</td>
+</tr>
+<tr>
+<td>roleLevel</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">&#x662F;</td>
+<td>&#x7528;&#x6237;&#x7B49;&#x7EA7;</td>
+</tr>
+<tr>
+<td>vipLevel</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">&#x662F;</td>
+<td>&#x7528;&#x6237;vip&#x7B49;&#x7EA7;</td>
+</tr>
+<tr>
+<td>balance</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">&#x662F;</td>
+<td>&#x7528;&#x6237;&#x4F59;&#x989D;(rmb&#x5143;)</td>
+</tr>
+<tr>
+<td>cpOrderId</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">&#x662F;</td>
+<td>&#x5F00;&#x53D1;&#x5546;&#x8BA2;&#x5355;&#x53F7;(&#x6700;&#x957F;32&#x4F4D;)</td>
+</tr>
+<tr>
+<td>amount</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">&#x662F;</td>
+<td>&#x5145;&#x503C;&#x91D1;&#x989D;(rmb&#x5143;)&#x6700;&#x4F4E; 1 &#x5143;</td>
+</tr>
+<tr>
+<td>ratio</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">&#x662F;</td>
+<td>&#x4EA4;&#x6613;&#x6BD4;&#x7387;&#xFF0C;&#x5982;1&#x5143;&#xFF1D;10&#x5143;&#x5B9D;&#xFF0C; <br>&#x6BD4;&#x7387;&#x8BF7;&#x586B;&#x5199;10,<br>&#x9ED8;&#x8BA4;&#x4E3A;1:1&#x5373;1&#x5143;&#xFF1D;1&#x5143;&#x5B9D;</td>
+</tr>
+<tr>
+<td>productName</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">&#x662F;</td>
+<td>&#x5546;&#x54C1;&#x540D;&#x79F0;<br>&#x6CE8; &#x610F;:&#x8BE5;&#x5B57;&#x6BB5;&#x4E2D;&#x4E0D;&#x80FD;&#x5305;&#x542B;&#x7279;&#x6B8A;&#x5B57;&#x7B26;,&#x5305;&#x62EC;<code># &quot; &amp; / ? $ ^ *:) \ &lt; &gt; , = &#x56DE;&#x8F66; &#x6362;&#x884C;</code><br>&#x5982;&#xFF1A;&#x94BB;&#x77F3;</td>
+</tr>
+<tr>
+<td>count</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">&#x662F;</td>
+<td>&#x5546;&#x54C1;&#x6570;&#x91CF;<br>&#x5982;&#xFF1A;&#x8D2D;&#x4E70;60&#x7816;&#x77F3; &#x5373;&#xFF1A;count=60</td>
+</tr>
+<tr>
+<td>productId</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">&#x662F;</td>
+<td>&#x5546;&#x54C1;id</td>
+</tr>
+<tr>
+<td>appName</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">&#x662F;</td>
+<td>&#x5F53;&#x524D;&#x6E38;&#x620F;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>serverId</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">&#x662F;</td>
+<td>&#x6E38;&#x620F;&#x670D;&#x52A1;&#x5668;id (&#x6700;&#x957F;10&#x4F4D;)<br>sdk&#x4E0D;&#x4F1A;&#x4FDD;&#x5B58;&#x6E38;&#x620F;&#x670D;&#x52A1;&#x5668;id&#xFF0C;&#x8BF7;cp&#x6309;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x4F20;&#x5165;</td>
+</tr>
+<tr>
+<td>serverName</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">&#x662F;</td>
+<td>&#x6E38;&#x620F;&#x670D;&#x52A1;&#x5668;&#x540D;(&#x53EF;&#x9009;)<br>sdk&#x4E0D;&#x4F1A;&#x4FDD;&#x5B58;&#x6E38;&#x620F;&#x670D;&#x52A1;&#x5668;&#x540D;&#xFF0C;&#x8BF7;cp&#x6309;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x4F20;&#x5165;</td>
+</tr>
+<tr>
+<td>extraData</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">&#x5426;</td>
+<td>&#x5F00;&#x53D1;&#x5546;&#x6269;&#x5C55;&#x4FE1;&#x606F;(&#x53EF;&#x9009;)&#x5BF9;&#x5E94;&#x670D;&#x52A1;&#x7AEF;&#x7684;privater_info&#x5B57;&#x6BB5;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-java">    <span class="hljs-function"><span class="hljs-keyword">private</span> XHCpPayInfo <span class="hljs-title">getPayInfo</span><span class="hljs-params">()</span> </span>{
+        XHCpUserInfo.Builder userBuild = <span class="hljs-keyword">new</span> XHCpUserInfo.Builder();
+        userBuild.setRoleName(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x89D2;&#x8272;&quot;</span>)
+                .setRoleId(<span class="hljs-string">&quot;1234560&quot;</span>)<span class="hljs-comment">//&#x5F53;&#x524D;&#x767B;&#x9646;&#x7684;&#x89D2;&#x8272;ID</span>
+                .setUserId(userId)<span class="hljs-comment">// &#x767B;&#x5F55;&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x7528;&#x6237;ID</span>
+                .setRoleLevel(<span class="hljs-string">&quot;10&quot;</span>)<span class="hljs-comment">// &#x89D2;&#x8272;&#x7B49;&#x7EA7;</span>
+                .setVipLevel(<span class="hljs-string">&quot;6&quot;</span>)<span class="hljs-comment">// vip&#x7B49;&#x7EA7;</span>
+                .setBalance(<span class="hljs-string">&quot;0&quot;</span>);<span class="hljs-comment">// &#x4F59;&#x989D; rmb &#x5355;&#x4F4D;&#xFF1A;&#x5143;</span>
+
+        XHCpPayInfo.Builder payBuild = <span class="hljs-keyword">new</span> XHCpPayInfo.Builder();
+        payBuild.setCpUserInfo(userBuild.build())
+                .setCpOrderId(System.currentTimeMillis() + <span class="hljs-string">&quot;&quot;</span>)<span class="hljs-comment">// &#x8BA2;&#x5355;&#x53F7; &#x6B64;&#x5904;&#x4EE5;&#x968F;&#x673A;&#x6570;&#x4EE3;&#x66FF;</span>
+                .setAmount(Integer.parseInt(priceString))<span class="hljs-comment">// rmb &#x5355;&#x4F4D;&#xFF1A;&#x5143;</span>
+                .setRatio(<span class="hljs-number">10</span>)<span class="hljs-comment">// &#x4EA4;&#x6613;&#x6BD4;&#x7387;&#xFF0C;&#x5982;1&#x5143;&#xFF1D;10&#x5143;&#x5B9D;&#xFF0C;&#x6BD4;&#x7387;&#x8BF7;&#x586B;&#x5199;10,&#x9ED8;&#x8BA4;&#x4E3A;1:1  &#x5373;1&#x5143;&#xFF1D;1&#x5143;&#x5B9D;</span>
+                .setProductName(<span class="hljs-string">&quot;&#x94BB;&#x77F3;&quot;</span>)<span class="hljs-comment">// &#x5546;&#x54C1;&#x540D;</span>
+                .setCount(<span class="hljs-number">60</span>)
+<span class="hljs-comment">//                .setProductName(&quot;&#x6708;&#x5361;&quot;)</span>
+<span class="hljs-comment">//                .setCount(1)</span>
+                .setProductId(<span class="hljs-string">&quot;100&quot;</span>)<span class="hljs-comment">// &#x5546;&#x54C1;id</span>
+                .setAppName(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x6E38;&#x620F;01&quot;</span>)<span class="hljs-comment">// &#x6E38;&#x620F;&#x540D;</span>
+                .setServerId(<span class="hljs-string">&quot;1&quot;</span>)<span class="hljs-comment">// &#x4FEE;&#x6539;&#x6B64;&#x53C2;&#x6570;&#x4E3A;&#x5FC5;&#x9009;&#x53C2;&#x6570; &#x6E38;&#x620F;&#x670D;&#x52A1;&#x5668;id&#xFF0C;&#x6700;&#x957F;10&#x4F4D;</span>
+                .setServerName(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x4E00;&#x533A;&quot;</span>)
+                .setExtraData(<span class="hljs-string">&quot;extra_info&quot;</span>);<span class="hljs-comment">// (&#x53EF;&#x9009;&#x53C2;&#x6570;) CP &#x6269;&#x5C55;&#x4FE1;&#x606F;</span>
+        <span class="hljs-keyword">return</span> payBuild.build();
+    }
+</code></pre>
+<h2 id="452-&#x652F;&#x4ED8;&#x8C03;&#x7528;">4.5.2 &#x652F;&#x4ED8;&#x8C03;&#x7528;</h2>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">doPayBySDK</span><span class="hljs-params">(Context context, XHCpPayInfo cpPayInfo)</span></span>;
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x5B9E;&#x73B0;<code>XHCallBack&lt;Bundle&gt;</code>&#x63A5;&#x53E3;&#x83B7;&#x53D6;&#x652F;&#x4ED8;&#x7ED3;&#x679C;&#x901A;&#x77E5;&#xFF0C;onSuccess&#x7684;&#x56DE;&#x8C03;&#x4EC5;&#x8868;&#x793A;&#x7528;&#x6237;&#x662F;&#x5426;&#x5B8C;&#x6210;&#x652F;&#x4ED8;&#x64CD;&#x4F5C;&#xFF0C;&#x7531;&#x4E8E;&#x652F;&#x4ED8;&#x5230;&#x8D26;&#x5EF6;&#x8FDF;&#x7684;&#x60C5;&#x51B5;&#x5076;&#x6709;&#x53D1;&#x751F;&#xFF0C;&#x652F;&#x4ED8;&#x662F;&#x5426;&#x6210;&#x529F;&#x5C06;&#x901A;&#x8FC7;&#x540E;&#x53F0;&#x901A;&#x77E5;&#x5F00;&#x53D1;&#x5546;&#x7684;&#x652F;&#x4ED8;&#x56DE;&#x8C03;&#x5730;&#x5740;&#x3002;&#x53EA;&#x6709;&#x5F00;&#x53D1;&#x5546;&#x7684;&#x670D;&#x52A1;&#x5668;&#x63A5;&#x5230;&#x6210;&#x529F;&#x7684;&#x901A;&#x77E5;&#xFF0C;&#x652F;&#x4ED8;&#x624D;&#x7B97;&#x6210;&#x529F;&#x3002;</p>
+<h2 id="46-&#x9000;&#x51FA;&#x63A5;&#x53E3;">4.6 &#x9000;&#x51FA;&#x63A5;&#x53E3;</h2>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">quit</span><span class="hljs-params">(Context context)</span>
+</span></code></pre>
+<p>&#x5728;&#x8C03;&#x7528;&#x6B64;&#x63A5;&#x53E3;&#x524D;&#x9700;&#x8981;&#x5224;&#x65AD;&#x6E20;&#x9053;&#x662F;&#x5426;&#x5B58;&#x5728;&#x9000;&#x51FA;&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;<code>boolean hadPlatformQuitUI()</code>&#x65B9;&#x6CD5;&#x5224;&#x65AD;&#xFF0C;true&#x8868;&#x793A;&#x5B58;&#x5728;&#x6E20;&#x9053;&#x9000;&#x51FA;&#xFF0C;false&#x8868;&#x793A;&#x4E0D;&#x5B58;&#x5728;&#x6E20;&#x9053;&#x9000;&#x51FA;
+&#x5982;&#x679C;&#x5B58;&#x5728;&#x518D;&#x8C03;&#x7528;&#x8BE5;&#x63A5;&#x53E3;&#xFF0C;&#x5426;&#x5219;&#x6E38;&#x620F;&#x81EA;&#x884C;&#x5B9E;&#x73B0;&#x9000;&#x51FA;&#x6E38;&#x620F;&#x64CD;&#x4F5C;&#xFF0C;&#x8C03;&#x7528;&#x8BE5;&#x63A5;&#x53E3;&#xFF0C;&#x70B9;&#x51FB;&#x786E;&#x5B9A;&#x65F6;&#x5C06;&#x56DE;&#x8C03;quit&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#xFF0C;&#x53D6;&#x6D88;&#x65F6;&#x56DE;&#x8C03;cancel&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#xFF1B;</p>
+<h2 id="47-&#x9500;&#x6BC1;&#x63A5;&#x53E3;">4.7 &#x9500;&#x6BC1;&#x63A5;&#x53E3;</h2>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">destroySDK</span><span class="hljs-params">(Context context)</span>
+</span></code></pre>
+<p>&#x6B64;&#x63A5;&#x53E3;&#x5C06;&#x56DE;&#x6536;SDK&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x5728;&#x6E38;&#x620F;&#x9000;&#x51FA;&#x65F6;&#x9700;&#x8981;&#x8C03;&#x7528;&#x9500;&#x6BC1;&#x63A5;&#x53E3;&#xFF0C;&#x4EE5;&#x4FBF;&#x91CA;&#x653E;&#x5185;&#x5B58;&#x3002;</p>
+<h2 id="48-sdk&#x751F;&#x547D;&#x5468;&#x671F;&#x7BA1;&#x7406;">4.8 SDK&#x751F;&#x547D;&#x5468;&#x671F;&#x7BA1;&#x7406;</h2>
+<p>&#x9700;&#x8981;&#x5728;&#x767B;&#x9646;&#x4EE5;&#x540E;&#x7684;&#x6E38;&#x620F;&#x4E3B;&#x754C;&#x9762;Activity&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E2D;&#x52A0;&#x5165;SDK&#x751F;&#x547D;&#x5468;&#x671F;&#x63A5;&#x53E3;&#x8C03;&#x7528;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
+    <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
+    sdk.onCreate(<span class="hljs-keyword">this</span>);
+&#xFF5D;
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onStart</span><span class="hljs-params">()</span> </span>{
+    sdk.onStart(<span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">super</span>.onStart();
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onResume</span><span class="hljs-params">()</span> </span>{
+    sdk.onResume(<span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">super</span>.onResume();
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPause</span><span class="hljs-params">()</span> </span>{
+    sdk.onPause(<span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">super</span>.onPause();
+}
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onStop</span><span class="hljs-params">()</span> </span>{
+    sdk.onStop(<span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">super</span>.onStop();
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onRestart</span><span class="hljs-params">()</span> </span>{
+    sdk.onRestart(<span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">super</span>.onRestart();
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onDestroy</span><span class="hljs-params">()</span> </span>{
+    sdk.onDestroy(<span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">super</span>.onDestroy();
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onNewIntent</span><span class="hljs-params">(Intent intent)</span> </span>{
+    <span class="hljs-keyword">super</span>.onNewIntent(intent);
+    sdk.onNewIntent(<span class="hljs-keyword">this</span>, intent);
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onConfigurationChanged</span><span class="hljs-params">(Configuration newConfig)</span> </span>{
+    <span class="hljs-keyword">super</span>.onConfigurationChanged(newConfig);
+    sdk.onConfigurationChanged(<span class="hljs-keyword">this</span>, newConfig);
+}
+</code></pre>
+<h2 id="49-onactivityresult">4.9 onActivityResult</h2>
+<p>&#x6E38;&#x620F;&#x9700;&#x8981;&#x5728;&#x53D1;&#x8D77;&#x652F;&#x4ED8;&#x7684;Activity&#x4E2D;&#x91CD;&#x5199;Activity&#x7684;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onActivityResult</span><span class="hljs-params">(<span class="hljs-keyword">int</span> requestCode, <span class="hljs-keyword">int</span> resultCode, Intent data)</span> </span>{
+   <span class="hljs-keyword">super</span>.onActivityResult(requestCode, resultCode, data);
+}
+</code></pre>
+<h2 id="412-onsaveinstancestate">4.12 onSaveInstanceState</h2>
+<p>&#x6E38;&#x620F;&#x9700;&#x8981;&#x91CD;&#x5199;&#x6E38;&#x620F;Activity&#x7684;onSaveInstanceState&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x8C03;&#x7528;&#x5982;&#x4E0B;&#x63A5;&#x53E3;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">onSaveInstanceState</span><span class="hljs-params">(Context context, Bundle outState)</span></span>;
+</code></pre>
+<h2 id="413-&#x63D0;&#x4EA4;&#x7528;&#x6237;&#x6E38;&#x620F;&#x4FE1;&#x606F;">4.13 &#x63D0;&#x4EA4;&#x7528;&#x6237;&#x6E38;&#x620F;&#x4FE1;&#x606F;</h2>
+<p>&#x672C;&#x63A5;&#x53E3;&#x9700;&#x8981;&#x5728;&#x767B;&#x9646;&#x6E38;&#x620F;&#x89D2;&#x8272;/&#x5207;&#x6362;&#x6E38;&#x620F;&#x89D2;&#x8272;/&#x8FDB;&#x5165;&#x533A;&#x670D;/&#x89D2;&#x8272;&#x521B;&#x5EFA;/&#x89D2;&#x8272;&#x5347;&#x7EA7;/&#x89D2;&#x8272;&#x9000;&#x51FA;/&#x89D2;&#x8272;&#x6539;&#x540D; &#x7B49;&#x60C5;&#x666F;&#x4E0B;&#x8C03;&#x7528;&#xFF0C;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;&#x5747;&#x4E3A;&#x5FC5;&#x9009;&#xFF1A;
+(&#x5982;&#x6E38;&#x620F;&#x5185;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x76F8;&#x5E94;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x4E14;&#x63CF;&#x8FF0;&#x4E2D;&#x65E0;&#x8981;&#x6C42;&#xFF1A;&#x53EF;&#x9009;&#x53C2;&#x6570;int&#x4F20;-1&#xFF0C;string&#x4F20;&quot;&#x4E0D;&#x5B58;&#x5728;&quot;&#xFF0C;&#x5FC5;&#x586B;&#x5B57;&#x6BB5;&#x4E0D;&#x53EF;&#x4F20;-1&#x6216;&#x7A7A;&#xFF0C;&#x5FC5;&#x987B;&#x4F20;&#x771F;&#x5B9E;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E0D;&#x53EF;&#x4F20;&#x5176;&#x5B83;&#x5982;null\0\&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x7B49;)
+&#x5982;&#x6E38;&#x620F;&#x4E2D;&#x6709;&#x597D;&#x53CB;&#x7CFB;&#x7EDF;&#xFF0C;&#x5219;friendsList&#x5B57;&#x6BB5;&#x52A1;&#x5FC5;&#x6309;&#x7167;&#x4E0B;&#x8868;&#x4F20;&#x5165;&#xFF0C;&#x5982;&#x65E0;&#x6B64;&#x529F;&#x80FD;&#x8BE5;&#x5B57;&#x6BB5;&#x4F20;&#x5165;null&#x5373;&#x53EF;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UserId</td>
+<td>String</td>
+<td>&#x7528;&#x6237;id&#xFF0C;&#x767B;&#x9646;&#x540E;&#x8FD4;&#x56DE;</td>
+</tr>
+<tr>
+<td>RoleId</td>
+<td>String</td>
+<td>&#x6E38;&#x620F;&#x89D2;&#x8272;id</td>
+</tr>
+<tr>
+<td>RoleName</td>
+<td>String</td>
+<td>&#x7528;&#x6237;&#x6635;&#x79F0;&#xFF0F;&#x89D2;&#x8272;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>RoleLevel</td>
+<td>String</td>
+<td>&#x7528;&#x6237;&#x7B49;&#x7EA7; &#x5982;&#x65E0;&#x4F20;&#x201D;0&#x201D;</td>
+</tr>
+<tr>
+<td>ServerId</td>
+<td>int</td>
+<td>&#x767B;&#x9646;&#x670D;&#x52A1;&#x5668;id</td>
+</tr>
+<tr>
+<td>ServerName</td>
+<td>String</td>
+<td>&#x767B;&#x9646;&#x670D;&#x52A1;&#x5668;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>RoleCTime</td>
+<td>long</td>
+<td>&#x89D2;&#x8272;&#x521B;&#x5EFA;&#x65F6;&#x95F4;(&#x5355; &#x4F4D;:&#x79D2;),&#x957F;&#x5EA6; 10, &#x83B7;&#x53D6;&#x670D;&#x52A1;&#x5668;&#x5B58;&#x50A8; &#x7684;&#x65F6;&#x95F4;,&#x4E0D;&#x53EF;&#x7528;&#x624B;&#x673A;&#x672C;&#x5730;&#x65F6;&#x95F4;)</td>
+</tr>
+<tr>
+<td>power</td>
+<td>int</td>
+<td>&#x89D2;&#x8272;&#x6218;&#x6597;&#x529B;&#xFF0C;&#x5982;&#x65E0;&#x8BF7;&#x586B;&#x5199;&#xFF1A;0</td>
+</tr>
+<tr>
+<td>professionId</td>
+<td>int</td>
+<td>&#x89D2;&#x8272;&#x7684;&#x804C;&#x4E1A;id,&#x5982;&#x65E0;&#x8BF7;&#x586B;&#x5199;:0</td>
+</tr>
+<tr>
+<td>profession</td>
+<td>String</td>
+<td>&#x89D2;&#x8272;&#x7684;&#x804C;&#x4E1A;&#x540D;&#x79F0;&#xFF0C;&#x5982;&#x65E0;&#x8BF7;&#x586B;&#x5199;&#x201D;&#x65E0;&#x201D;</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>String</td>
+<td>&#x89D2;&#x8272;&#x6027;&#x522B;&#xFF0C;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&#xFF0C;&#x53EF;&#x9009;&#xFF1A;&#x201C;&#x7537;&#x3001;&#x5973;&#x3001;&#x65E0;&#x201D;</td>
+</tr>
+<tr>
+<td>VipLevel</td>
+<td>String</td>
+<td>&#x7528;&#x6237;vip&#x7B49;&#x7EA7;&#xFF0C;&#x5982;&#x65E0;&#x8BF7;&#x586B;&#x5199;:&#x201D;0&#x201D;</td>
+</tr>
+<tr>
+<td>guildId</td>
+<td>int</td>
+<td>&#x89D2;&#x8272;&#x6240;&#x5C5E;&#x5E2E;&#x6D3E;&#x5E2E;&#x6D3E;Id&#xFF0C;&#x5982;&#x65E0;&#x8BF7;&#x586B;&#x5199;:0</td>
+</tr>
+<tr>
+<td>guildName</td>
+<td>String</td>
+<td>&#x89D2;&#x8272;&#x6240;&#x5C5E;&#x5E2E;&#x6D3E;&#x5E2E;&#x6D3E;&#x540D;&#x79F0;&#xFF0C;&#x5982;&#x65E0;&#x8BF7;&#x586B;&#x5199;&#xFF1A;&#x201C;&#x65E0;&#x201D;</td>
+</tr>
+<tr>
+<td>guildTitleId</td>
+<td>int</td>
+<td>&#x89D2;&#x8272;&#x5728;&#x5E2E;&#x6D3E;&#x4E2D;&#x7684;&#x5E2E;&#x6D3E;&#x79F0;&#x53F7;Id,&#x5E2E;&#x4E3B;&#x5219;&#x5FC5;&#x586B;&#xFF1A;1&#xFF0C;&#x5176;&#x4ED6;&#x53EF;&#x81EA;&#x5B9A;&#x4E49;&#xFF0C;&#x5982;&#x65E0;&#x8BF7;&#x586B;&#x5199;&#xFF1A;0</td>
+</tr>
+<tr>
+<td>guildTitleName</td>
+<td>String</td>
+<td>&#x89D2;&#x8272;&#x5728;&#x5E2E;&#x6D3E;&#x4E2D;&#x7684;&#x5E2E;&#x6D3E;&#x79F0;&#x53F7;,&#x5982;&#x65E0;&#x8BF7;&#x586B;&#x5199;&#xFF1A;&quot;&#x65E0;&quot;</td>
+</tr>
+<tr>
+<td>action</td>
+<td>XHGameAction</td>
+<td>&#x767B;&#x9646;/&#x5207;&#x6362;&#x6E38;&#x620F;&#x89D2;&#x8272;&#x6210;&#x529F;</td>
+</tr>
+</tbody>
+</table>
+<p>XHGameAction&#x7684;&#x7C7B;&#x578B;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ENTER_SERVER</td>
+<td>&#x8FDB;&#x5165;&#x670D;&#x52A1;&#x5668;</td>
+</tr>
+<tr>
+<td>LEVEL_UP</td>
+<td>&#x89D2;&#x8272;&#x5347;&#x7EA7;</td>
+</tr>
+<tr>
+<td>CREATE_ROLE</td>
+<td>&#x521B;&#x5EFA;&#x89D2;&#x8272;</td>
+</tr>
+<tr>
+<td>LOGIN</td>
+<td>&#x8D26;&#x53F7;&#x767B;&#x5F55;</td>
+</tr>
+<tr>
+<td>ROLE_LOGOUT</td>
+<td>&#x767B;&#x51FA;&#x89D2;&#x8272;</td>
+</tr>
+<tr>
+<td>PROFILE</td>
+<td>&#x753B;&#x50CF;&#x6539;&#x53D8;,&#x5F53;&#x89D2;&#x8272;&#x7684;vip&#xFF0C;&#x6027;&#x522B;&#xFF0C;&#x540D;&#x79F0;&#x53D8;&#x5316;&#x65F6;&#x8FDB;&#x884C;&#x4E0A;&#x62A5;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x63D0;&#x4EA4;&#x6E38;&#x620F;&#x7528;&#x6237;&#x4FE1;&#x606F;</span>
+<span class="hljs-comment">//&#x63D0;&#x4EA4;&#x6E38;&#x620F;&#x7528;&#x6237;&#x4FE1;&#x606F;</span>
+XHPlatformSubUserInfo.Builder info = <span class="hljs-keyword">new</span> XHPlatformSubUserInfo.Builder();
+info.setPower(<span class="hljs-number">0</span>)
+        .setProfessionId(<span class="hljs-number">101</span>)<span class="hljs-comment">//&#x767B;&#x9646;&#x89D2;&#x8272;&#x7684;&#x804C;&#x4E1A;ID&#xFF0C;&#x5982;&#x65E0;&#x8BF7;&#x586B;&#x5199;&#xFF1A;0</span>
+        .setProfession(<span class="hljs-string">&quot;&#x9B54;&#x6CD5;&#x5E08;&quot;</span>)<span class="hljs-comment">//&#x767B;&#x9646;&#x89D2;&#x8272;&#x7684;&#x804C;&#x4E1A;&#x540D;&#x79F0;&#xFF0C;&#x5982;&#x65E0;&#x8BF7;&#x586B;&#x5199;&quot;&#x65E0;&quot;</span>
+        .setGuildName(<span class="hljs-string">&quot;&#x7B2C;&#x4E00;&#x516C;&#x4F1A;&quot;</span>)<span class="hljs-comment">//&#x5F53;&#x524D;&#x89D2;&#x8272;&#x6240;&#x5C5E;&#x5E2E;&#x6D3E;&#x5E2E;&#x6D3E;&#x540D;&#x79F0;&#xFF0C;&#x5982;&#x65E0;&#x8BF7;&#x586B;&#x5199;&#xFF1A;&#x65E0;</span>
+        .setGuildId(<span class="hljs-number">1001</span>)<span class="hljs-comment">//&#x5F53;&#x524D;&#x89D2;&#x8272;&#x6240;&#x5C5E;&#x5E2E;&#x6D3E;&#x5E2E;&#x6D3E;Id&#xFF0C;&#x5982;&#x65E0;&#x8BF7;&#x586B;&#x5199;:0</span>
+        .setGuildTitleId(<span class="hljs-number">1</span>)<span class="hljs-comment">//&#x89D2;&#x8272;&#x5728;&#x5E2E;&#x6D3E;&#x4E2D;&#x7684;&#x5E2E;&#x6D3E;&#x79F0;&#x53F7;Id,&#x5E2E;&#x4E3B;&#x5219;&#x5FC5;&#x586B;&#xFF1A;1&#xFF0C;&#x5176;&#x4ED6;&#x53EF;&#x81EA;&#x5B9A;&#x4E49;&#xFF0C;&#x5982;&#x65E0;&#x8BF7;&#x586B;&#x5199;&#xFF1A;0</span>
+        .setGuildTitleName(<span class="hljs-string">&quot;&#x5E2E;&#x4E3B;&quot;</span>)<span class="hljs-comment">//&#x89D2;&#x8272;&#x5728;&#x5E2E;&#x6D3E;&#x4E2D;&#x7684;&#x5E2E;&#x6D3E;&#x79F0;&#x53F7;,&#x5982;&#x65E0;&#x8BF7;&#x586B;&#x5199;&#xFF1A;&quot;&#x65E0;&quot;</span>
+        .setGender(<span class="hljs-string">&quot;&#x7537;&quot;</span>)<span class="hljs-comment">//&#x767B;&#x9646;&#x89D2;&#x8272;&#x7684;&#x6027;&#x522B;&#xFF0C;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&#xFF0C;&#x53EF;&#x9009;&#xFF1A;&#x201C;&#x7537;&#x3001;&#x5973;&#x3001;&#x65E0;&#x201D;</span>
+        .setServerId(<span class="hljs-number">1</span>)<span class="hljs-comment">//&#x670D;&#x52A1;&#x5668;Id</span>
+        .setServerName(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x4E00;&#x533A;&quot;</span>)<span class="hljs-comment">//&#x670D;&#x52A1;&#x5668;&#x540D;&#x79F0;</span>
+        .setUserId(userId) <span class="hljs-comment">// &#x767B;&#x5F55;&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x7528;&#x6237;ID</span>
+        .setUserName(userName)
+        .setRoleName(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x89D2;&#x8272;&quot;</span>)<span class="hljs-comment">//&#x5F53;&#x524D;&#x89D2;&#x8272;&#x6635;&#x79F0;</span>
+        .setRoleId(<span class="hljs-string">&quot;123456789&quot;</span>)<span class="hljs-comment">//&#x89D2;&#x8272;ID</span>
+        .setRoleLevel(<span class="hljs-string">&quot;10&quot;</span>)<span class="hljs-comment">//&#x5F53;&#x524D;&#x89D2;&#x8272;&#x7B49;&#x7EA7;</span>
+        .setRoleCTime(<span class="hljs-number">1000000000L</span>)<span class="hljs-comment">//&#x89D2;&#x8272;&#x521B;&#x5EFA;&#x65F6;&#x95F4;(&#x5355; &#x4F4D;:&#x79D2;),&#x957F;&#x5EA6; 10, &#x83B7;&#x53D6;&#x670D;&#x52A1;&#x5668;&#x5B58;&#x50A8; &#x7684;&#x65F6;&#x95F4;,&#x4E0D;&#x53EF;&#x7528;&#x624B;&#x673A;&#x672C;&#x5730;&#x65F6;&#x95F4;</span>
+        .setVipLevel(<span class="hljs-string">&quot;6&quot;</span>);<span class="hljs-comment">//&#x5F53;&#x524D;&#x7528;&#x6237;&#x7684;VIP&#x7B49;&#x7EA7;&#xFF0C;&#x5982;&#x65E0;&#x8BF7;&#x586B;&#x5199;&#xFF1A;0</span>
+sdk.submitUserInfo(GameActivity.<span class="hljs-keyword">this</span>, XHGameAction.CREATE_ROLE, info.build());
+</code></pre>
+<h1 id="&#x4E94;&#x3001;-&#x7248;&#x672C;&#x5386;&#x53F2;">&#x4E94;&#x3001; &#x7248;&#x672C;&#x5386;&#x53F2;</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x7248;&#x672C;</th>
+<th style="text-align:center">&#x65F6;&#x95F4;</th>
+<th style="text-align:center">&#x66F4;&#x65B0;&#x4EBA;</th>
+<th>&#x66F4;&#x65B0;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1.0.2</td>
+<td style="text-align:center">2019/4/12</td>
+<td style="text-align:center">supo</td>
+<td>1.&#x4FEE;&#x6539;&#x6240;&#x6709;&#x7684;&#x56DE;&#x8C03;&#x65B9;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528;&#x7EDF;&#x4E00;&#x7684;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x3002;2.&#x7CBE;&#x7B80;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;</td>
+</tr>
+<tr>
+<td style="text-align:center">1.0.1</td>
+<td style="text-align:center">2019/2/25</td>
+<td style="text-align:center">supo</td>
+<td>&#x5B8C;&#x6210;&#x805A;&#x5408;sdk&#x7684;&#x5B8C;&#x6574;&#x529F;&#x80FD;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="android自测文档.html" class="navigation navigation-next navigation-unique" aria-label="Next page: android自测文档">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Android聚合sdk接入文档","date":"2019-02-22T17:27:38.000Z","description":"星魂Android聚合sdk接入说明，请接入人员认真仔细阅读文档，准确配置工程和接入sdk各个接口，保证功能完整和完善，不能有闪退或者异常出现。","level":"2.1.1","depth":2,"next":{"title":"android自测文档","level":"2.1.2","depth":2,"path":"android自测文档.md","ref":"android自测文档.md","articles":[]},"previous":{"title":"客户端","level":"2.1","depth":1,"ref":"","articles":[{"title":"Android聚合sdk接入文档","level":"2.1.1","depth":2,"path":"androidsdk.md","ref":"androidsdk.md","articles":[]},{"title":"android自测文档","level":"2.1.2","depth":2,"path":"android自测文档.md","ref":"android自测文档.md","articles":[]},{"title":"iOS统计SDK接入文档","level":"2.1.3","depth":2,"path":"iosdata.md","ref":"iosdata.md","articles":[]},{"title":"iOS SDK接入文档","level":"2.1.4","depth":2,"path":"iossdk.md","ref":"iossdk.md","articles":[]},{"title":"下载","level":"2.1.5","depth":2,"path":"下载.md","ref":"下载.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"androidsdk.md","mtime":"2019-05-30T09:40:44.970Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-31T03:29:44.153Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

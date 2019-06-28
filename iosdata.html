@@ -1,0 +1,524 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>iOS统计SDK接入文档 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="请接入人员认真仔细阅读文档，准确配置工程和接入sdk各个接口，保证功能完整和完善，不能有闪退或者异常出现。">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="iossdk.html" />
+    
+    
+    <link rel="prev" href="android自测文档.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    星魂文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    客户端
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="androidsdk.html">
+            
+                <a href="androidsdk.html">
+            
+                    
+                    Android聚合sdk接入文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="android自测文档.html">
+            
+                <a href="android自测文档.html">
+            
+                    
+                    android自测文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.3" data-path="iosdata.html">
+            
+                <a href="iosdata.html">
+            
+                    
+                    iOS统计SDK接入文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="iossdk.html">
+            
+                <a href="iossdk.html">
+            
+                    
+                    iOS SDK接入文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="下载.html">
+            
+                <a href="下载.html">
+            
+                    
+                    下载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    服务端
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="server-pay.html">
+            
+                <a href="server-pay.html">
+            
+                    
+                    支付异步通知文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="user-channel-verify.html">
+            
+                <a href="user-channel-verify.html">
+            
+                    
+                    角色登录校验文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="server_error_code.html">
+            
+                <a href="server_error_code.html">
+            
+                    
+                    服务端错误码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >iOS统计SDK接入文档</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="1&#x3001;&#x8BBE;&#x7F6E;other-linker-flag">1&#x3001;&#x8BBE;&#x7F6E;other linker flag</h1>
+<pre><code class="lang-objc">- &#x7ED9;Target&#x4E2D;&#x7684;other linker flag &#x6DFB;&#x52A0; `-ObjC`
+</code></pre>
+<p><img src="iosdata/linker.png" alt="avatar"></p>
+<h1 id="2&#x3001;sdk&#x529F;&#x80FD;&#x63A5;&#x5165;">2&#x3001;SDK&#x529F;&#x80FD;&#x63A5;&#x5165;</h1>
+<h2 id="21-&#x5F00;&#x542F;crash&#x9632;&#x5FA1;&#x673A;&#x5236;&#xFF0C;&#x81EA;&#x52A8;&#x6536;&#x96C6;&#x4E0A;&#x62A5;crash&#x4FE1;&#x606F;">2.1 &#x5F00;&#x542F;crash&#x9632;&#x5FA1;&#x673A;&#x5236;&#xFF0C;&#x81EA;&#x52A8;&#x6536;&#x96C6;&#x4E0A;&#x62A5;crash&#x4FE1;&#x606F;</h2>
+<pre><code class="lang-objc">+ [XHCrashHandler share]
+</code></pre>
+<p>&#x5EFA;&#x8BAE;&#x5728; application:didFinishLaunching &#x4E2D;&#x5F00;&#x542F;crash&#x9632;&#x5FA1;&#x673A;&#x5236;<br>&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-objc">- (<span class="hljs-built_in">BOOL</span>)application:(<span class="hljs-built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="hljs-built_in">NSDictionary</span> *)launchOptions {
+
+    [XHCrashHandler share];
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">YES</span>;
+}
+</code></pre>
+<h2 id="22-&#x662F;&#x5426;&#x5F00;&#x542F;&#x65E5;&#x5FD7;&#x6253;&#x5370;">2.2 &#x662F;&#x5426;&#x5F00;&#x542F;&#x65E5;&#x5FD7;&#x6253;&#x5370;</h2>
+<pre><code class="lang-objc">+ (<span class="hljs-keyword">void</span>)trackingPrint:(<span class="hljs-built_in">BOOL</span>)isPrint;
+</code></pre>
+<h2 id="23-&#x7EDF;&#x8BA1;&#x529F;&#x80FD;&#x521D;&#x59CB;&#x5316;">2.3 &#x7EDF;&#x8BA1;&#x529F;&#x80FD;&#x521D;&#x59CB;&#x5316;</h2>
+<pre><code class="lang-objc">+ (<span class="hljs-keyword">void</span>)trackingInit:(XHDataSDKInitModel *)model;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x53C2;&#x6570;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">model</td>
+<td>&#x7EDF;&#x8BA1;&#x521D;&#x59CB;&#x5316;&#x6570;&#x636E;&#x6A21;&#x578B;&#xFF0C;&#x6A21;&#x578B;&#x4E2D;&#x7684;&#x6BCF;&#x6761;&#x5C5E;&#x6027;&#x90FD;&#x8981;&#x8D4B;&#x503C;&#xFF0C;&#x6CA1;&#x6709;&#x503C;&#x7684;&#x9700;&#x8981;&#x8D4B;&#x503C; XHParamUNKNOWN</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</a></p>
+<h2 id="24-&#x8BBE;&#x5907;&#x542F;&#x52A8;&#x7EDF;&#x8BA1;">2.4 &#x8BBE;&#x5907;&#x542F;&#x52A8;&#x7EDF;&#x8BA1;</h2>
+<pre><code class="lang-objc">+ (<span class="hljs-keyword">void</span>)trackingStartup:(XHUserModel *)model;
+</code></pre>
+<h2 id="25-&#x6CE8;&#x518C;&#x7EDF;&#x8BA1;">2.5 &#x6CE8;&#x518C;&#x7EDF;&#x8BA1;</h2>
+<pre><code class="lang-objc">+ (<span class="hljs-keyword">void</span>)trackingRegister:(XHUserModel *)model;
+</code></pre>
+<h2 id="26-&#x767B;&#x5F55;&#x7EDF;&#x8BA1;">2.6 &#x767B;&#x5F55;&#x7EDF;&#x8BA1;</h2>
+<pre><code class="lang-objc">+ (<span class="hljs-keyword">void</span>)trackingLogin:(XHUserModel *)model;
+</code></pre>
+<h2 id="27-&#x767B;&#x51FA;&#x7EDF;&#x8BA1;">2.7 &#x767B;&#x51FA;&#x7EDF;&#x8BA1;</h2>
+<pre><code class="lang-objc">+ (<span class="hljs-keyword">void</span>)trackingLogout:(XHUserModel *)model;
+</code></pre>
+<h2 id="28-&#x753B;&#x50CF;&#x53D8;&#x66F4;&#x7EDF;&#x8BA1;">2.8 &#x753B;&#x50CF;&#x53D8;&#x66F4;&#x7EDF;&#x8BA1;</h2>
+<pre><code class="lang-objc">+ (<span class="hljs-keyword">void</span>)trackingProfile:(XHUserModel *)model;
+</code></pre>
+<h2 id="29-&#x89D2;&#x8272;&#x5347;&#x7EA7;&#x7EDF;&#x8BA1;">2.9 &#x89D2;&#x8272;&#x5347;&#x7EA7;&#x7EDF;&#x8BA1;</h2>
+<pre><code class="lang-objc">+ (<span class="hljs-keyword">void</span>)trackingLevelup:(XHUserModel *)model;
+</code></pre>
+<h3 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;"><a name="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</a></h3>
+<h3 id="xhdatasdkinitmodel">XHDataSDKInitModel</h3>
+<p>&#x5907;&#x6CE8;&#xFF1A;&#x8BE5;&#x53C2;&#x6570;&#x4E0B;&#x7684;&#x5168;&#x90E8;&#x5C5E;&#x6027;&#x90FD;&#x662F;NSString&#x7C7B;&#x578B;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x5C5E;&#x6027;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">XH_appID</td>
+<td>App&#x5728;&#x6E38;&#x620F;&#x5E73;&#x53F0;&#x7684;AppID</td>
+</tr>
+<tr>
+<td style="text-align:center">XH_dataAppID</td>
+<td>App&#x5728;&#x7EDF;&#x8BA1;&#x5E73;&#x53F0;&#x7684;AppID</td>
+</tr>
+<tr>
+<td style="text-align:center">XH_versionPackage</td>
+<td>&#x5305;&#x7248;&#x672C;&#x53F7;</td>
+</tr>
+<tr>
+<td style="text-align:center">XH_channelID</td>
+<td>&#x6E20;&#x9053;ID</td>
+</tr>
+<tr>
+<td style="text-align:center">XH_channelName</td>
+<td>&#x6E20;&#x9053;&#x540D;&#x79F0;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xhusermodel">XHUserModel</h3>
+<p>&#x5907;&#x6CE8;&#xFF1A;&#x8BE5;&#x53C2;&#x6570;&#x4E0B;&#x7684;&#x5168;&#x90E8;&#x5C5E;&#x6027;&#x90FD;&#x662F;NSString&#x7C7B;&#x578B;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x5C5E;&#x6027;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">XH_userID</td>
+<td>&#x8D26;&#x53F7;&#x6807;&#x8BC6;(&#x5E73;&#x53F0;&#x8D26;&#x53F7;&#x6807;&#x8BC6;)</td>
+</tr>
+<tr>
+<td style="text-align:center">XH_userName</td>
+<td>&#x8D26;&#x53F7;&#x540D;&#x79F0;(&#x5E73;&#x53F0;&#x8D26;&#x53F7;&#x540D;&#x79F0;)</td>
+</tr>
+<tr>
+<td style="text-align:center">XH_serverID</td>
+<td>&#x670D;&#x52A1;&#x5668;ID</td>
+</tr>
+<tr>
+<td style="text-align:center">XH_serverName</td>
+<td>&#x73A9;&#x5BB6;&#x6240;&#x5728;&#x670D;&#x52A1;&#x5668;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td style="text-align:center">XH_vip</td>
+<td>Vip&#x7B49;&#x7EA7;</td>
+</tr>
+<tr>
+<td style="text-align:center">XH_level</td>
+<td>&#x73A9;&#x5BB6;&#x7B49;&#x7EA7;</td>
+</tr>
+<tr>
+<td style="text-align:center">XH_roleID</td>
+<td>&#x89D2;&#x8272;&#x6807;&#x8BC6;&#xFF08;&#x89D2;&#x8272;&#x552F;&#x4E00;&#x6807;&#x8BC6;)</td>
+</tr>
+<tr>
+<td style="text-align:center">XH_roleName</td>
+<td>&#x89D2;&#x8272;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td style="text-align:center">XH_gender</td>
+<td>&#x89D2;&#x8272;&#x6240;&#x5C5E;&#x6027;&#x522B;(&#x7537;&#xFF0C;&#x5973;)</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="android自测文档.html" class="navigation navigation-prev " aria-label="Previous page: android自测文档">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="iossdk.html" class="navigation navigation-next " aria-label="Next page: iOS SDK接入文档">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"iOS统计SDK接入文档","date":"2019-03-04T20:44:06.000Z","description":"请接入人员认真仔细阅读文档，准确配置工程和接入sdk各个接口，保证功能完整和完善，不能有闪退或者异常出现。","tags":null,"level":"2.1.3","depth":2,"next":{"title":"iOS SDK接入文档","level":"2.1.4","depth":2,"path":"iossdk.md","ref":"iossdk.md","articles":[]},"previous":{"title":"android自测文档","level":"2.1.2","depth":2,"path":"android自测文档.md","ref":"android自测文档.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iosdata.md","mtime":"2019-05-29T07:29:15.941Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-31T03:29:44.153Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
