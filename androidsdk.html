@@ -173,7 +173,52 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.5" data-path="下载.html">
+        <li class="chapter " data-level="2.1.5" >
+            
+                <span>
+            
+                    
+                    更新说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.5.1" data-path="更新说明/gameSDKUpdateHistory.html">
+            
+                <a href="更新说明/gameSDKUpdateHistory.html">
+            
+                    
+                    游戏SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5.2" data-path="更新说明/dataSDKUpdateHistory.html">
+            
+                <a href="更新说明/dataSDKUpdateHistory.html">
+            
+                    
+                    数据SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="下载.html">
             
                 <a href="下载.html">
             
@@ -356,6 +401,11 @@
     <span class="hljs-attr">android:windowSoftInputMode</span>=<span class="hljs-string">&quot;stateHidden|adjustResize|adjustPan&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">activity</span>&gt;</span>
 
+<span class="hljs-comment">&lt;!--&#x5FC3;&#x8DF3;&#x670D;&#x52A1;--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">service</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.xh.data.services.HeartBeatService&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">service</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.xh.services.XHRefreshTokenService&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">service</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.xh.services.GrayService&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">service</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.xh.services.UploadService&quot;</span> <span class="hljs-attr">android:process</span>=<span class="hljs-string">&quot;:upload&quot;</span>/&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">service</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.xh.update.DownloadService&quot;</span> /&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">provider</span>
@@ -609,7 +659,6 @@ XHSDK.getInstance().initApplication(<span class="hljs-keyword">this</span>,confi
             <span class="hljs-comment">// &#x56DE;&#x6536;sdk&#x8D44;&#x6E90;</span>
             sdk.destroySDK(GameActivity.<span class="hljs-keyword">this</span>);
             GameActivity.<span class="hljs-keyword">this</span>.finish();
-            System.exit(<span class="hljs-number">0</span>);
         }
 
         <span class="hljs-meta">@Override</span>
@@ -722,12 +771,6 @@ XHSDK.getInstance().initApplication(<span class="hljs-keyword">this</span>,confi
 <td>&#x7528;&#x6237;&#x6635;&#x79F0;</td>
 </tr>
 <tr>
-<td>userId</td>
-<td style="text-align:center">String</td>
-<td style="text-align:center">&#x662F;</td>
-<td>&#x7528;&#x6237;id&#xFF0C;(&#x767B;&#x9646;&#x63A5;&#x53E3;&#x8FD4;&#x56DE;)</td>
-</tr>
-<tr>
 <td>roleLevel</td>
 <td style="text-align:center">String</td>
 <td style="text-align:center">&#x662F;</td>
@@ -811,7 +854,6 @@ XHSDK.getInstance().initApplication(<span class="hljs-keyword">this</span>,confi
         XHCpUserInfo.Builder userBuild = <span class="hljs-keyword">new</span> XHCpUserInfo.Builder();
         userBuild.setRoleName(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x89D2;&#x8272;&quot;</span>)
                 .setRoleId(<span class="hljs-string">&quot;1234560&quot;</span>)<span class="hljs-comment">//&#x5F53;&#x524D;&#x767B;&#x9646;&#x7684;&#x89D2;&#x8272;ID</span>
-                .setUserId(userId)<span class="hljs-comment">// &#x767B;&#x5F55;&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x7528;&#x6237;ID</span>
                 .setRoleLevel(<span class="hljs-string">&quot;10&quot;</span>)<span class="hljs-comment">// &#x89D2;&#x8272;&#x7B49;&#x7EA7;</span>
                 .setVipLevel(<span class="hljs-string">&quot;6&quot;</span>)<span class="hljs-comment">// vip&#x7B49;&#x7EA7;</span>
                 .setBalance(<span class="hljs-string">&quot;0&quot;</span>);<span class="hljs-comment">// &#x4F59;&#x989D; rmb &#x5355;&#x4F4D;&#xFF1A;&#x5143;</span>
@@ -899,6 +941,12 @@ XHSDK.getInstance().initApplication(<span class="hljs-keyword">this</span>,confi
     <span class="hljs-keyword">super</span>.onConfigurationChanged(newConfig);
     sdk.onConfigurationChanged(<span class="hljs-keyword">this</span>, newConfig);
 }
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onRequestPermissionsResult</span><span class="hljs-params">(<span class="hljs-keyword">int</span> requestCode, String[] permissions, <span class="hljs-keyword">int</span>[] grantResults)</span> </span>{
+    <span class="hljs-keyword">super</span>.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    sdk.onRequestPermissionsResult(requestCode,permissions,grantResults);
+}
 </code></pre>
 <h2 id="49-onactivityresult">4.9 onActivityResult</h2>
 <p>&#x6E38;&#x620F;&#x9700;&#x8981;&#x5728;&#x53D1;&#x8D77;&#x652F;&#x4ED8;&#x7684;Activity&#x4E2D;&#x91CD;&#x5199;Activity&#x7684;</p>
@@ -924,11 +972,6 @@ XHSDK.getInstance().initApplication(<span class="hljs-keyword">this</span>,confi
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>UserId</td>
-<td>String</td>
-<td>&#x7528;&#x6237;id&#xFF0C;&#x767B;&#x9646;&#x540E;&#x8FD4;&#x56DE;</td>
-</tr>
 <tr>
 <td>RoleId</td>
 <td>String</td>
@@ -1059,8 +1102,6 @@ info.setPower(<span class="hljs-number">0</span>)
         .setGender(<span class="hljs-string">&quot;&#x7537;&quot;</span>)<span class="hljs-comment">//&#x767B;&#x9646;&#x89D2;&#x8272;&#x7684;&#x6027;&#x522B;&#xFF0C;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&#xFF0C;&#x53EF;&#x9009;&#xFF1A;&#x201C;&#x7537;&#x3001;&#x5973;&#x3001;&#x65E0;&#x201D;</span>
         .setServerId(<span class="hljs-number">1</span>)<span class="hljs-comment">//&#x670D;&#x52A1;&#x5668;Id</span>
         .setServerName(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x4E00;&#x533A;&quot;</span>)<span class="hljs-comment">//&#x670D;&#x52A1;&#x5668;&#x540D;&#x79F0;</span>
-        .setUserId(userId) <span class="hljs-comment">// &#x767B;&#x5F55;&#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x7528;&#x6237;ID</span>
-        .setUserName(userName)
         .setRoleName(<span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x89D2;&#x8272;&quot;</span>)<span class="hljs-comment">//&#x5F53;&#x524D;&#x89D2;&#x8272;&#x6635;&#x79F0;</span>
         .setRoleId(<span class="hljs-string">&quot;123456789&quot;</span>)<span class="hljs-comment">//&#x89D2;&#x8272;ID</span>
         .setRoleLevel(<span class="hljs-string">&quot;10&quot;</span>)<span class="hljs-comment">//&#x5F53;&#x524D;&#x89D2;&#x8272;&#x7B49;&#x7EA7;</span>
@@ -1079,6 +1120,12 @@ sdk.submitUserInfo(GameActivity.<span class="hljs-keyword">this</span>, XHGameAc
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:center">1.0.3</td>
+<td style="text-align:center">2019/6/21</td>
+<td style="text-align:center">supo</td>
+<td>1.&#x4FEE;&#x590D;&#x5B8C;&#x5584;&#x9879;&#x76EE; 2.&#x9002;&#x914D;8.0&#x4EE5;&#x4E0A;&#x6743;&#x9650;</td>
+</tr>
 <tr>
 <td style="text-align:center">1.0.2</td>
 <td style="text-align:center">2019/4/12</td>
@@ -1132,7 +1179,7 @@ sdk.submitUserInfo(GameActivity.<span class="hljs-keyword">this</span>, XHGameAc
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Android聚合sdk接入文档","date":"2019-02-22T17:27:38.000Z","description":"星魂Android聚合sdk接入说明，请接入人员认真仔细阅读文档，准确配置工程和接入sdk各个接口，保证功能完整和完善，不能有闪退或者异常出现。","level":"2.1.1","depth":2,"next":{"title":"android自测文档","level":"2.1.2","depth":2,"path":"android自测文档.md","ref":"android自测文档.md","articles":[]},"previous":{"title":"客户端","level":"2.1","depth":1,"ref":"","articles":[{"title":"Android聚合sdk接入文档","level":"2.1.1","depth":2,"path":"androidsdk.md","ref":"androidsdk.md","articles":[]},{"title":"android自测文档","level":"2.1.2","depth":2,"path":"android自测文档.md","ref":"android自测文档.md","articles":[]},{"title":"iOS统计SDK接入文档","level":"2.1.3","depth":2,"path":"iosdata.md","ref":"iosdata.md","articles":[]},{"title":"iOS SDK接入文档","level":"2.1.4","depth":2,"path":"iossdk.md","ref":"iossdk.md","articles":[]},{"title":"下载","level":"2.1.5","depth":2,"path":"下载.md","ref":"下载.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"androidsdk.md","mtime":"2019-05-30T09:40:44.970Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-31T03:29:44.153Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Android聚合sdk接入文档","date":"2019-02-22T17:27:38.000Z","description":"星魂Android聚合sdk接入说明，请接入人员认真仔细阅读文档，准确配置工程和接入sdk各个接口，保证功能完整和完善，不能有闪退或者异常出现。","level":"2.1.1","depth":2,"next":{"title":"android自测文档","level":"2.1.2","depth":2,"path":"android自测文档.md","ref":"android自测文档.md","articles":[]},"previous":{"title":"客户端","level":"2.1","depth":1,"ref":"","articles":[{"title":"Android聚合sdk接入文档","level":"2.1.1","depth":2,"path":"androidsdk.md","ref":"androidsdk.md","articles":[]},{"title":"android自测文档","level":"2.1.2","depth":2,"path":"android自测文档.md","ref":"android自测文档.md","articles":[]},{"title":"iOS统计SDK接入文档","level":"2.1.3","depth":2,"path":"iosdata.md","ref":"iosdata.md","articles":[]},{"title":"iOS SDK接入文档","level":"2.1.4","depth":2,"path":"iossdk.md","ref":"iossdk.md","articles":[]},{"title":"更新说明","level":"2.1.5","depth":2,"ref":"","articles":[{"title":"游戏SDK","level":"2.1.5.1","depth":3,"path":"更新说明/gameSDKUpdateHistory.md","ref":"更新说明/gameSDKUpdateHistory.md","articles":[]},{"title":"数据SDK","level":"2.1.5.2","depth":3,"path":"更新说明/dataSDKUpdateHistory.md","ref":"更新说明/dataSDKUpdateHistory.md","articles":[]}]},{"title":"下载","level":"2.1.6","depth":2,"path":"下载.md","ref":"下载.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"androidsdk.md","mtime":"2019-06-28T03:40:15.516Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-28T03:46:05.564Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
